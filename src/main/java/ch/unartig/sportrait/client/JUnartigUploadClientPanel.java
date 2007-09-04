@@ -66,6 +66,8 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener,
         }
 
 
+        System.out.println("JUnartigUploadClientPanel.init :  got albums");
+
         JLabel label = new JLabel("Album für Foto-Upload wählen:");
 
         chooseYourEventComboBox = new JComboBox();

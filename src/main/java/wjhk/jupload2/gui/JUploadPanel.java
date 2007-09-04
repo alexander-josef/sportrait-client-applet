@@ -232,6 +232,7 @@ public class JUploadPanel extends JPanel implements ActionListener,
         // -------- JButton browse --------
         this.browseButton = new JButton(this.uploadPolicy
                 .getString("buttonBrowse"));
+        System.out.println("JUploadPanel.setupTopPanel EXLORER IMAGE");
         this.browseButton.setIcon(new ImageIcon(getClass().getResource(
                 "/images/explorer.gif")));
         this.browseButton.addActionListener(this);
