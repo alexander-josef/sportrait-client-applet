@@ -114,6 +114,14 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
+
+        <!-- TODO change this to an https repository; see google bookmarks 'maven'-->
+        <repository>
+            <id>http-repo</id>
+            <name>unArtig maven2 repo</name>
+            <url>http://vm3-bugz.unartig.ch/maven2</url>
+        </repository>
+        
     </repositories>
 
 
@@ -130,5 +138,20 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <distributionManagement>
+        <!-- use the following if you're not using a snapshot version. -->
+        <repository>
+            <id>ssh-repo</id>
+            <name>unartig m2 repo</name>
+            <url>scp://vm3-bugz.unartig.ch/opt/maven2/repo</url>
+        </repository>
+        <!-- use the following if you ARE using a snapshot version. -->
+        <snapshotRepository>
+            <id>ssh-repo</id>
+            <name>unartig m2 snapshot repo</name>
+            <url>scp://vm3-bugz.unartig.ch/opt/maven2/repo</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
 
 </project>
