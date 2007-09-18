@@ -39,7 +39,7 @@
 
         <plugins>
 
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -48,26 +48,27 @@
                     <target>1.5</target>
                 </configuration>
             </plugin>
-            
-      			<plugin>
-			        <groupId>org.apache.maven.plugins</groupId>
-			        <artifactId>maven-jar-plugin</artifactId>
-			        <executions>
-			           <execution>
-			              <goals>
-			                 <goal>sign</goal>
-			              </goals>
-			           </execution>
-			        </executions>
-			        <configuration>
-<!--			           <keystore>/path/to/your/keystore</keystore> -->
-			           <alias>jupload</alias>
-			           <storepass>changeit</storepass>
-			           <signedjar>${project.build.directory}/signed/${project.build.finalName}.jar</signedjar>
-			           <verify>true</verify>
-			        </configuration>
-      			</plugin>
-      	</plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--			           <keystore>/path/to/your/keystore</keystore> -->
+                    <alias>jupload</alias>
+                    <storepass>changeit</storepass>
+                    <!--do not enable the next line : we want to deploy the signed jar.-->
+                    <!--<signedjar>${project.build.directory}/signed/${project.build.finalName}.jar</signedjar>-->
+                    <verify>true</verify>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 
@@ -83,7 +84,7 @@
         <profile>
             <id>vm2-test</id>
 
- 
+
         </profile>
 
         <profile>
@@ -99,7 +100,6 @@
         </profile>
 
 
- 
     </profiles>
 
 
@@ -121,7 +121,7 @@
             <name>unArtig maven2 repo</name>
             <url>http://vm3-bugz.unartig.ch/maven2</url>
         </repository>
-        
+
     </repositories>
 
 
@@ -152,6 +152,6 @@
             <url>scp://vm3-bugz.unartig.ch/opt/maven2/repo</url>
         </snapshotRepository>
     </distributionManagement>
-    
+
 
 </project>
