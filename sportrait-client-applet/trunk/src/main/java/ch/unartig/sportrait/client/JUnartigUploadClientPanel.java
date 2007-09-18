@@ -42,6 +42,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener,
     private JComboBox chooseYourEventComboBox;
     private static final String _PHOTOGRAPHER_PASS = "photographerPass";
     private static final String _PHOTOGRAPHER_ID = "photographerId";
+    private static final String _XML_RPC_SERVER_URL = "xmlRpcServerUrl";
 
 
     public JUnartigUploadClientPanel(UploadPolicy uploadPolicy)
@@ -100,8 +101,12 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener,
      */
     private Object[] getSportraitAlbums() throws MalformedURLException, XmlRpcException
     {
+        String photographerId = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_ID);
+        String password = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_PASS);
+//        String xmlRpcServerUrl = "http://sportrait.local/xmlrpc";
+        String xmlRpcServerUrl = uploadPolicy.getApplet().getParameter(_XML_RPC_SERVER_URL);
         XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-        config.setServerURL(new URL("http://sportrait.local/xmlrpc"));
+        config.setServerURL(new URL(xmlRpcServerUrl));
         XmlRpcClient client = new XmlRpcClient();
         client.setConfig(config);
         Object[] params = new Object[]{new Integer(33), new Integer(9)};
@@ -109,10 +114,6 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener,
         System.out.println("result = " + result);
 
         // XML RPC Call to getAlbums
-//        String photographerId = "2";
-        String photographerId = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_ID);
-//        String password = "";
-        String password = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_PASS);
         Object[] sportraitServerAuthParams = new Object[]{photographerId, password};
         Object xmlRpcResult = client.execute("Calculator.getAlbums",sportraitServerAuthParams);
 
