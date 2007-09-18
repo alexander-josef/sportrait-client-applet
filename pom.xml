@@ -115,7 +115,7 @@
             </releases>
         </repository>
 
-        <!-- TODO change this to an https repository; see google bookmarks 'maven'-->
+        <!-- TODO change this to an https repository; see google bookmarks 'maven' for handling the certificate etc-->
         <repository>
             <id>http-repo</id>
             <name>unArtig maven2 repo</name>
