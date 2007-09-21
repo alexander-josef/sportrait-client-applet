@@ -5,7 +5,7 @@
     <packaging>
         jar
     </packaging>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.5</version>
     <name>sportrait Client Applet</name>
     <url>http://sportrait.com</url>
 
@@ -153,8 +153,8 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk</connection>
-        <developerConnection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk</developerConnection>
+        <connection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/tags/sportrait_client-0.5</connection>
+        <developerConnection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/tags/sportrait_client-0.5</developerConnection>
         <tag>HEAD</tag>
         <!--<url>http://127.0.0.1/websvn/my-project</url>-->
     </scm>
