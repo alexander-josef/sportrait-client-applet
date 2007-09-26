@@ -152,6 +152,7 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <!--todo : have the svn url with the username somewhere else ... this is not portable.-->
     <scm>
         <connection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk</connection>
         <developerConnection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk</developerConnection>
