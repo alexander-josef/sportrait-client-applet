@@ -179,10 +179,9 @@ public class JUploadPanel extends JPanel implements ActionListener,
      * @param uploadPolicyParam The current UploadPolicy. Null if a new one must
      *            be created.
      * @see UploadPolicyFactory#getUploadPolicy(wjhk.jupload2.JUploadApplet)
+     * @throws Exception
      */
-    public JUploadPanel(@SuppressWarnings("unused")
-    Container containerParam, JUploadTextArea logWindow,
-            UploadPolicy uploadPolicyParam) throws Exception {
+    public JUploadPanel(@SuppressWarnings("unused")Container containerParam, JUploadTextArea logWindow, UploadPolicy uploadPolicyParam) throws Exception {
         this.logWindow = logWindow;
         this.uploadPolicy = uploadPolicyParam;
         this.jUploadPopupMenu = new JUploadPopupMenu(this.uploadPolicy);
@@ -192,6 +191,7 @@ public class JUploadPanel extends JPanel implements ActionListener,
 
 
         // unartig settings
+        // todo can this be done in the policy? Then we wouldn't need to change jupload at all .... just adapt a policy.
         setupUnartigPanel();
 
         // Setup Top Panel
