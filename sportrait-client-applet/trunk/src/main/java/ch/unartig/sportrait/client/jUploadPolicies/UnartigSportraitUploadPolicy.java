@@ -82,9 +82,13 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
 {
 
     /**
-     * The coppermine's album id where picture must be uploaded.
+     * The unartig  params:
      */
     private int albumId;
+    private int eventId;
+    private int eventCategoryId;
+    private int photographerId;
+    private String photographerPassword;
 
     /**
      * The number of pictures to download in the current upload. This number is
@@ -92,14 +96,20 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
      * beginning of each upload.
      */
     private int nbPictureInUpload = 0;
+    public static final String PROP_EVENT_ID = "eventId";
+    public static final String PROP_EVENT_CATEGORY_ID = "eventCategoryId";
+    public static final String PROP_PHOTOGRAPHER_ID = "photographerId";
+    private static final String PROP_PHOTOGRAPHER_PASSWORD = "photographerPassword";
+    private static final int DEFAULT_PHOTOGRAPHER_ID = 0;
+    private static final String DEFAULT_PHOTOGRAPHER_PASSWORD = "1234";
 
     /**
+     * Constructor
      * @param theApplet Identifier for the current applet. It's necessary, to
      *            read information from the navigator.
      * @throws wjhk.jupload2.exception.JUploadException todo add description
      */
-    public UnartigSportraitUploadPolicy(JUploadApplet theApplet)
-            throws JUploadException
+    public UnartigSportraitUploadPolicy(JUploadApplet theApplet) throws JUploadException
     {
         // Let's call our mother ! :-)
         super(theApplet);
@@ -110,8 +120,9 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
         // Let's read the albumId from the applet parameter. It can be unset,
         // but the user must then choose
         // an album before upload.
-        this.albumId = UploadPolicyFactory.getParameter(theApplet,
-                PROP_ALBUM_ID, DEFAULT_ALBUM_ID, this);
+        this.albumId = UploadPolicyFactory.getParameter(theApplet,PROP_ALBUM_ID, DEFAULT_ALBUM_ID, this);
+        this.photographerId = UploadPolicyFactory.getParameter(theApplet,PROP_PHOTOGRAPHER_ID, DEFAULT_PHOTOGRAPHER_ID, this);
+        this.photographerPassword = UploadPolicyFactory.getParameter(theApplet,PROP_PHOTOGRAPHER_PASSWORD, DEFAULT_PHOTOGRAPHER_PASSWORD, this);
     }
 
     /**
@@ -157,8 +168,19 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
         // The, we check the local properties.
         if (prop.equals(PROP_ALBUM_ID)) {
             this.albumId = UploadPolicyFactory.parseInt(value, 0, this);
-            displayDebug("Post URL (modified in CoppermineUploadPolicy) = "
-                    + getPostURL(), 10);
+            displayDebug("Post URL (modified in CoppermineUploadPolicy) = " + getPostURL(), 10);
+        } else if (prop.equals(PROP_EVENT_ID)){
+            this.eventId = UploadPolicyFactory.parseInt(value, 0, this);
+            displayDebug("Post URL (modified in unartiguploadpolicy) = " + getPostURL(), 10);
+        } else if (prop.equals(PROP_PHOTOGRAPHER_ID)){
+            this.photographerId = UploadPolicyFactory.parseInt(value, 0, this);
+            displayDebug("Post URL (modified in unartiguploadpolicy) = " + getPostURL(), 10);
+        }else if (prop.equals(PROP_PHOTOGRAPHER_PASSWORD)){
+            this.photographerPassword = value;
+            displayDebug("Post URL (modified in unartiguploadpolicy) = " + getPostURL(), 10);
+        } else if (prop.equals(PROP_EVENT_CATEGORY_ID)){
+            this.eventCategoryId = UploadPolicyFactory.parseInt(value, 0, this);
+            displayDebug("Post URL (modified in unartiguploadpolicy) = " + getPostURL(), 10);
         } else {
             // Otherwise, transmission to the mother class.
             super.setProperty(prop, value);
@@ -166,6 +188,8 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
     }
 
     /**
+     * Overriden for unartig functionality:
+     * add eventID and eventCategoryId to the url as action parameters
      * @see wjhk.jupload2.policies.UploadPolicy#getPostURL()
      */
     @Override
@@ -180,12 +204,20 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
         // parameter, it's necessary to add a dummy one,
         // so that the line below generates a valid URL.
         String postURL = super.getPostURL();
-        return postURL + (postURL.contains("?") ? "&" : "?") + "albumId="
-                + this.albumId;
+        return postURL + (postURL.contains("?") ? "&" : "?")
+                + PROP_PHOTOGRAPHER_ID+"="
+                + getApplet().getParameter(PROP_PHOTOGRAPHER_ID)
+                + "&"+PROP_PHOTOGRAPHER_PASSWORD+"="
+                + this.photographerPassword
+                + "&"+PROP_EVENT_ID+"="
+                + this.eventId
+                + "&"+PROP_EVENT_CATEGORY_ID+"="
+                + this.eventCategoryId;
     }
 
 
     /**
+     * TODO check for category
      * @see wjhk.jupload2.policies.UploadPolicy#isUploadReady()
      */
     @Override
@@ -245,13 +277,19 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
         }
     }
 
+
+
     /** @see wjhk.jupload2.policies.DefaultUploadPolicy#displayParameterStatus() */
     @Override
     public void displayParameterStatus() {
         super.displayParameterStatus();
 
-        displayDebug("======= Parameters managed by CoppermineUploadPolicy", 20);
+        displayDebug("======= Parameters managed by UnartigSportraitUploadPolicy", 20);
         displayDebug(PROP_ALBUM_ID + " : " + this.albumId, 20);
+        displayDebug(PROP_EVENT_ID + " : " + this.eventId, 20);
+        displayDebug(PROP_EVENT_CATEGORY_ID + " : " + this.eventCategoryId, 20);
+        displayDebug(PROP_PHOTOGRAPHER_ID + " : " + this.photographerId, 20);
+        displayDebug(PROP_PHOTOGRAPHER_PASSWORD + " : " + this.photographerPassword, 20);
         displayDebug("", 20);
     }
 

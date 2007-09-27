@@ -35,6 +35,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
 
+import ch.unartig.sportrait.client.jUploadPolicies.UnartigSportraitUploadPolicy;
+
 public class JUnartigUploadClientPanel extends JPanel implements ActionListener
 {
     private HashMap albumMap;
@@ -109,6 +111,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         chooseYourCategoryList = new JList();
         chooseYourCategoryList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         chooseYourCategoryList.setLayoutOrientation(JList.VERTICAL);
+        chooseYourCategoryList.addListSelectionListener(new EventCategotyListSelectionListener());
         JScrollPane categoryListScroller = new JScrollPane(chooseYourCategoryList);
         categoryListScroller.setPreferredSize(new Dimension(200, 100));
         categoryListScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -252,7 +255,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
      */
     private Object getXmlRpcResult(String xmlRpcMethod,java.util.List parameterList) throws MalformedURLException, XmlRpcException
     {
-        String photographerId = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_ID);
+        String photographerId = uploadPolicy.getApplet().getParameter(UnartigSportraitUploadPolicy.PROP_PHOTOGRAPHER_ID);
         String password = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_PASS);
         String xmlRpcServerUrl = uploadPolicy.getApplet().getParameter(_XML_RPC_SERVER_URL);
         XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
@@ -351,6 +354,49 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
             throw new RuntimeException(e1);
         }
     }
+    
+    private class EventListSelectionListener implements ListSelectionListener
+    {
+        public void valueChanged(ListSelectionEvent e)
+        {
+            System.out.println("JUnartigUploadClientPanel$EventListSelectionListener.valueChanged");
+            String eventId = (String)chooseYourEventList.getSelectedValue();
+            System.out.println("event id = " + eventId);
+            try
+            {
+                uploadPolicy.setProperty(UnartigSportraitUploadPolicy.PROP_EVENT_ID,eventId);
+            } catch (JUploadException e1)
+            {
+                throw new RuntimeException("Error updating parameter");
+            }
+            // call loadCategoryList with event id
+            try
+            {
+                loadEventCategoryList(eventId);
+            } catch (Exception exception)
+            {
+                throw new RuntimeException("Exception while getting the event categories for ["+eventId+"]",exception);
+            }
+        }
+    }
+
+    private class EventCategotyListSelectionListener implements ListSelectionListener
+    {
+
+        public void valueChanged(ListSelectionEvent e)
+        {
+            try
+            {
+                uploadPolicy.setProperty(UnartigSportraitUploadPolicy.PROP_EVENT_CATEGORY_ID,(String)chooseYourCategoryList.getSelectedValue());
+            } catch (JUploadException e1)
+            {
+                throw new RuntimeException("Problem choosing the event category");
+            }
+        }
+    }
+
+
+
 
     /**
      * Renderer for the entry in the sportrait event list.
@@ -407,22 +453,4 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         }
     }
 
-    private class EventListSelectionListener implements ListSelectionListener
-    {
-        public void valueChanged(ListSelectionEvent e)
-        {
-            System.out.println("JUnartigUploadClientPanel$EventListSelectionListener.valueChanged");
-            String eventId = (String)chooseYourEventList.getSelectedValue();
-            System.out.println("event id = " + eventId);
-
-            // call loadCategoryList with event id
-            try
-            {
-                loadEventCategoryList(eventId);
-            } catch (Exception exception)
-            {
-                throw new RuntimeException("Exception while getting the event categories for ["+eventId+"]",exception);
-            }
-        }
-    }
 }

@@ -172,8 +172,7 @@ public class UploadPolicyFactory {
      * 
      * @return the parameter value, or the default, if the system is not set.
      */
-    static public int getParameter(JUploadApplet theApplet, String key,
-            int def, UploadPolicy uploadPolicy) {
+    static public int getParameter(JUploadApplet theApplet, String key,int def, UploadPolicy uploadPolicy) {
         String paramStr;
         String paramDef = Integer.toString(def);
 
