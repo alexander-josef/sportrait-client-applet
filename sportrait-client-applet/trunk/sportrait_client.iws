@@ -20,8 +20,6 @@
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/jUploadPolicies/UnartigSportraitUploadPolicy.java" afterPath="$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/jUploadPolicies/UnartigSportraitUploadPolicy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sportrait_client.iws" afterPath="$PROJECT_DIR$/sportrait_client.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/UploadPolicyFactory.java" afterPath="$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/UploadPolicyFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/JUnartigUploadClientPanel.java" afterPath="$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/JUnartigUploadClientPanel.java" />
     </list>
     <ignored path="sportrait_client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,16 +117,40 @@
       <file leaf-file-name="UnartigSportraitUploadPolicy.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/jUploadPolicies/UnartigSportraitUploadPolicy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="23" selection-start="6100" selection-end="6100" vertical-scroll-proportion="0.62711865">
+            <state line="283" column="13" selection-start="12177" selection-end="12177" vertical-scroll-proportion="0.33723196">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang_de.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/lang/lang_de.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="19" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.33606556">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang_de.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/wjhk/jupload2/lang/lang_de.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="5" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.33606556">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="UploadPolicyFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/UploadPolicyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="265" column="22" selection-start="10918" selection-end="10918" vertical-scroll-proportion="0.33333334">
+            <state line="265" column="22" selection-start="10918" selection-end="10918" vertical-scroll-proportion="0.34469697">
               <folding />
             </state>
           </provider>
@@ -137,7 +159,7 @@
       <file leaf-file-name="DefaultUploadPolicy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/DefaultUploadPolicy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1005" column="20" selection-start="40942" selection-end="40942" vertical-scroll-proportion="-0.5291902">
+            <state line="802" column="19" selection-start="31920" selection-end="31920" vertical-scroll-proportion="0.33528265">
               <folding />
             </state>
           </provider>
@@ -146,7 +168,7 @@
       <file leaf-file-name="JUnartigUploadClientPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/JUnartigUploadClientPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="67" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.36723164">
+            <state line="105" column="67" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.38011697">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,7 +179,7 @@
       <file leaf-file-name="PictureUploadPolicy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/PictureUploadPolicy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="516" column="60" selection-start="20044" selection-end="20044" vertical-scroll-proportion="0.1978022">
+            <state line="516" column="60" selection-start="20044" selection-end="20044" vertical-scroll-proportion="0.20454545">
               <folding />
             </state>
           </provider>
@@ -255,6 +277,52 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\resources\wjhk" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\resources\wjhk\jupload2" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\resources\wjhk\jupload2\lang" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Resource Bundle 'lang'" />
+          <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sportrait_client" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sportrait_client" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\resources" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -462,6 +530,48 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\java\wjhk\jupload2\lang" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Resource Bundle 'lang'" />
+          <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sportrait_client" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sportrait_client" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\java\wjhk" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\java\wjhk\jupload2" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\java\wjhk\jupload2\gui" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -551,6 +661,28 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main\java\ch\unartig\sportrait\client\jUploadPolicies" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sportrait_client" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sportrait_client" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\WORK\sportrait-client-applet\src\main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -655,7 +787,7 @@
       <parameter name="debugLevel" value="99" />
       <parameter name="maxChunkSize" value="500000" />
       <parameter name="nbFilesPerRequest" value="1" />
-      <parameter name="photographerId" value="2" />
+      <parameter name="photographerId" value="1" />
       <parameter name="photographerPass" value="1234" />
       <parameter name="postURL" value="http://sportrait.local/jupload/upload.html" />
       <parameter name="uploadPolicy" value="ch.unartig.sportrait.client.jUploadPolicies.UnartigSportraitUploadPolicy" />
@@ -738,7 +870,7 @@
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36097562" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3225058" order="2" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962963" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39907193" order="4" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -761,7 +893,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes: not album, but event and category can now be selected" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding photographer id to the server call for uploading photos" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -778,6 +910,8 @@
     <MESSAGE value="xmlrpc server url now configurable" />
     <MESSAGE value="scm configuration in pom" />
     <MESSAGE value="changes: not album, but event and category can now be selected" />
+    <MESSAGE value="adding photographer id to the call" />
+    <MESSAGE value="adding photographer id to the server call for uploading photos" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -922,16 +1056,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/DefaultUploadPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1005" column="20" selection-start="40942" selection-end="40942" vertical-scroll-proportion="-0.5291902">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/PictureUploadPolicy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="516" column="60" selection-start="20044" selection-end="20044" vertical-scroll-proportion="0.1978022">
+        <state line="516" column="60" selection-start="20044" selection-end="20044" vertical-scroll-proportion="0.20454545">
           <folding />
         </state>
       </provider>
@@ -1008,7 +1135,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/JUnartigUploadClientPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="67" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.36723164">
+        <state line="105" column="67" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.38011697">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1017,14 +1144,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/UploadPolicyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="22" selection-start="10918" selection-end="10918" vertical-scroll-proportion="0.33333334">
+        <state line="265" column="22" selection-start="10918" selection-end="10918" vertical-scroll-proportion="0.34469697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/lang/lang_de.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="19" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.33606556">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/wjhk/jupload2/lang/lang_de.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="5" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.33606556">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wjhk/jupload2/policies/DefaultUploadPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="802" column="19" selection-start="31920" selection-end="31920" vertical-scroll-proportion="0.33528265">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/unartig/sportrait/client/jUploadPolicies/UnartigSportraitUploadPolicy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="23" selection-start="6100" selection-end="6100" vertical-scroll-proportion="0.62711865">
+        <state line="283" column="13" selection-start="12177" selection-end="12177" vertical-scroll-proportion="0.33723196">
           <folding />
         </state>
       </provider>

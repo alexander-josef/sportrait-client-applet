@@ -217,12 +217,13 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
 
 
     /**
-     * TODO check for category
+     * unartig check for upload ready: eventCategoryId AND eventID >0
      * @see wjhk.jupload2.policies.UploadPolicy#isUploadReady()
      */
     @Override
     public boolean isUploadReady() {
-        if (this.albumId <= 0) {
+        if (this.eventId <= 0 || this.eventCategoryId <= 0) 
+        {
             alert("chooseAlbumFirst");
             return false;
         }
