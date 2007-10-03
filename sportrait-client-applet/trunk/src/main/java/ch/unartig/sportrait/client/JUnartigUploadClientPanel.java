@@ -33,13 +33,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
 
 import ch.unartig.sportrait.client.jUploadPolicies.UnartigSportraitUploadPolicy;
 
 public class JUnartigUploadClientPanel extends JPanel implements ActionListener
 {
-    private HashMap albumMap;
     private UploadPolicy uploadPolicy;
 //    private JComboBox chooseYourEventComboBox;
     private JList chooseYourEventList;
@@ -78,22 +80,6 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     {
         this.setMinimumSize(new Dimension(600,200));
         this.setLayout(new GridBagLayout());
-        Object [] albums;
-//        Object [] categories = null;
-        try
-        {
-            albums = getSportraitAlbums();
-            // todo this is used later:
-//            categories = getSportraitEventCategories();
-        } catch (MalformedURLException e)
-        {
-            throw new RuntimeException("URL exception: ",e);
-        } catch (XmlRpcException e)
-        {
-            throw new RuntimeException("XMLRPC exception: ",e);
-        }
-
-
         System.out.println("JUnartigUploadClientPanel.init :  got albums");
 
         JLabel label = new JLabel("Event und Kategorie für Foto-Upload wählen:");
@@ -278,63 +264,6 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         return client.execute(xmlRpcMethod,xmlRpcParameterList);
     }
 
-    /**
-     * 
-     * @return the keys of the albums-map; keys are the levelid from the server
-     * @throws MalformedURLException
-     * @throws XmlRpcException
-     */
-    private Object[] getSportraitAlbums() throws MalformedURLException, XmlRpcException
-    {
-        String photographerId = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_ID);
-        String password = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_PASS);
-//        String xmlRpcServerUrl = "http://sportrait.local/xmlrpc";
-        String xmlRpcServerUrl = uploadPolicy.getApplet().getParameter(_XML_RPC_SERVER_URL);
-        XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-        config.setServerURL(new URL(xmlRpcServerUrl));
-        XmlRpcClient client = new XmlRpcClient();
-        client.setConfig(config);
-        Object[] params = new Object[]{new Integer(33), new Integer(9)};
-        Integer result = (Integer) client.execute("Calculator.add", params);
-        System.out.println("result = " + result);
-
-        // XML RPC Call to getAlbums
-        Object[] sportraitServerAuthParams = new Object[]{photographerId, password};
-        Object xmlRpcResult = client.execute("Calculator.getAlbums",sportraitServerAuthParams);
-
-        System.out.println("xmlRpcResult.getClass().getName() = " + xmlRpcResult.getClass().getName());
-
-        albumMap = (HashMap) xmlRpcResult;
-        System.out.println("albumMap.size() = " + albumMap.size());
-        for (Iterator iterator = albumMap.keySet().iterator(); iterator.hasNext();)
-        {
-            String key = (String) iterator.next();
-            System.out.println("key = " + key);
-            String eventName = (String) albumMap.get(key);
-            System.out.println("eventName = " + eventName);
-        }
-
-
-        Object[] keys = albumMap.keySet().toArray();
-        System.out.println("keys.getClass().getName() = " + keys.getClass().getName());
-        return keys;
-
-
-//        for (int i = 0; i < xmlRpcResult.length; i++)
-//        {
-//            Object event = xmlRpcResult[i];
-//            System.out.println("event.getClass().getName() = " + event.getClass().getName());
-//            System.out.println("***** event = " + event);
-//        }
-        
-
-//        for (int i = 0; i < xmlRpcResult.size(); i++)
-//        {
-//            String s = (String) xmlRpcResult.get(i);
-//            System.out.println("s = " + s);
-//        }
-
-    }
 
 
     /**
