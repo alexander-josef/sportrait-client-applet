@@ -133,7 +133,6 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     }
 
     private void loadEventList()
-            throws MalformedURLException, XmlRpcException
     {
         // insert events in list
         Object [] events;
@@ -149,10 +148,8 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     /**
      * Load the event categories from the server and reset the list-model with the result.
      * @param eventId id of event that has been selected
-     * @throws MalformedURLException 
-     * @throws XmlRpcException
      */
-    private void loadEventCategoryList(String eventId) throws MalformedURLException, XmlRpcException
+    private void loadEventCategoryList(String eventId)
     {
         // insert events in list
         Object [] eventCategories;
@@ -178,7 +175,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
      * @throws MalformedURLException
      * @throws XmlRpcException
      */
-    private Object[] getSportraitEvents() throws MalformedURLException, XmlRpcException
+    private Object[] getSportraitEvents()
     {
         Object xmlRpcResult = getXmlRpcResult("AdminServices.getEvents",null);
 
@@ -205,11 +202,9 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     /**
      * Todo better routine name: this routine queries the server, sets the map with <categoryID,title> and return the keyset as array 
      * @return
-     * @throws MalformedURLException
-     * @throws XmlRpcException
      * @param eventId
      */
-    private Object[] getSportraitEventCategories(String eventId) throws MalformedURLException, XmlRpcException
+    private Object[] getSportraitEventCategories(String eventId)
     {
         java.util.List parameters = new ArrayList();
         parameters.add(eventId);
@@ -236,32 +231,38 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
      * @param xmlRpcMethod
      * @param parameterList
      * @return
-     * @throws MalformedURLException
-     * @throws XmlRpcException
      */
-    private Object getXmlRpcResult(String xmlRpcMethod,java.util.List parameterList) throws MalformedURLException, XmlRpcException
+    private Object getXmlRpcResult(String xmlRpcMethod,java.util.List parameterList)
     {
         String photographerId = uploadPolicy.getApplet().getParameter(UnartigSportraitUploadPolicy.PROP_PHOTOGRAPHER_ID);
         String password = uploadPolicy.getApplet().getParameter(_PHOTOGRAPHER_PASS);
         String xmlRpcServerUrl = uploadPolicy.getApplet().getParameter(_XML_RPC_SERVER_URL);
         XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-        config.setServerURL(new URL(xmlRpcServerUrl));
-        XmlRpcClient client = new XmlRpcClient();
-        client.setConfig(config);
+        final Object xmlRpcResult;
+        try {
+            config.setServerURL(new URL(xmlRpcServerUrl));
+            XmlRpcClient client = new XmlRpcClient();
+            client.setConfig(config);
 
-        java.util.List xmlRpcParameterList = new ArrayList();
-        xmlRpcParameterList.add(photographerId);
-        xmlRpcParameterList.add(password);
-        if (parameterList!=null)
-        {
-            for (int i = 0; i < parameterList.size(); i++)
+            java.util.List xmlRpcParameterList = new ArrayList();
+            xmlRpcParameterList.add(photographerId);
+            xmlRpcParameterList.add(password);
+            if (parameterList!=null)
             {
-                Object parameter = parameterList.get(i);
-                xmlRpcParameterList.add(parameter);
+                for (int i = 0; i < parameterList.size(); i++)
+                {
+                    Object parameter = parameterList.get(i);
+                    xmlRpcParameterList.add(parameter);
+                }
             }
+            System.out.println("going to execute xmlrpc-method");
+            xmlRpcResult = client.execute(xmlRpcMethod, xmlRpcParameterList);
+        } catch (Exception e) {
+            System.out.println("error executing xml rpc");
+            e.printStackTrace();
+            throw new RuntimeException("Error executing xml rpc call, check stack trace",e);
         }
-        System.out.println("going to execute xmlrpc-method");
-        return client.execute(xmlRpcMethod,xmlRpcParameterList);
+        return xmlRpcResult;
     }
 
 
@@ -299,13 +300,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
                 throw new RuntimeException("Error updating parameter");
             }
             // call loadCategoryList with event id
-            try
-            {
-                loadEventCategoryList(eventId);
-            } catch (Exception exception)
-            {
-                throw new RuntimeException("Exception while getting the event categories for ["+eventId+"]",exception);
-            }
+            loadEventCategoryList(eventId);
         }
     }
 
