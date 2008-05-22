@@ -2,9 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ch.unartig.server</groupId>
     <artifactId>sportrait_client</artifactId>
-    <packaging>
-        jar
-    </packaging>
+    <packaging>jar</packaging>
     <version>0.6-SNAPSHOT</version>
     <name>sportrait Client Applet</name>
     <url>http://sportrait.com</url>
@@ -33,12 +31,8 @@
 
 
     <build>
-
         <finalName>wjhk.jupload</finalName>
-
         <plugins>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -72,33 +66,18 @@
 
 
     <profiles>
-
         <profile>
             <id>prod</id>
-
-
         </profile>
-
-
         <profile>
             <id>vm2-test</id>
-
-
         </profile>
-
         <profile>
             <id>test</id>
-
-
         </profile>
-
         <profile>
             <id>dev-local</id>
-
-
         </profile>
-
-
     </profiles>
 
 
@@ -120,7 +99,6 @@
             <name>unArtig maven2 repo</name>
             <url>http://vm3-bugz.unartig.ch/maven2</url>
         </repository>
-
     </repositories>
 
 
