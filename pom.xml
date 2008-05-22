@@ -126,7 +126,7 @@
         <snapshotRepository>
             <id>ssh-repo</id>
             <name>unartig m2 snapshot repo</name>
-            <url>scp://vm3-bugz.unartig.ch/opt/maven2/repo</url>
+            <url>scp://alex@vm3-bugz.unartig.ch/opt/maven2/repo</url>
         </snapshotRepository>
     </distributionManagement>
 
