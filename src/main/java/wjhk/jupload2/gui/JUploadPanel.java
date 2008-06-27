@@ -222,6 +222,7 @@ public class JUploadPanel extends JPanel implements ActionListener,
     private void setupUnartigPanel()
     {
         unartigPanel = new JUnartigUploadClientPanel(this.uploadPolicy);
+
         this.add(unartigPanel);
     }
 
