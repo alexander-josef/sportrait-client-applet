@@ -272,6 +272,25 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/branches" />
+                  <option value="svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
   </component>

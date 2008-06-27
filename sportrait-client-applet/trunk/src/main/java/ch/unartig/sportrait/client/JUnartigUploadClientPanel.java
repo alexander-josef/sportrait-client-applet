@@ -55,6 +55,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     private DefaultListModel sportraitEventCategoryListModel;
 
 
+
     public JUnartigUploadClientPanel(UploadPolicy uploadPolicy)
     {
         this.uploadPolicy = uploadPolicy;
@@ -80,9 +81,14 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     {
         this.setMinimumSize(new Dimension(600,200));
         this.setLayout(new GridBagLayout());
+        GridBagConstraints gbc;
+        gbc = new GridBagConstraints();
         System.out.println("JUnartigUploadClientPanel.init :  got albums");
 
-        JLabel label = new JLabel("Event und Kategorie für Foto-Upload wählen:");
+        JLabel targetLabel = new JLabel("ZIEL -- Event und Kategorie fŸr Foto-Upload wŠhlen:");
+        JLabel eventLabel = new JLabel("Anlass");
+        JLabel categoryLabel = new JLabel("Event");
+        JLabel sourceLabel = new JLabel("Quelle:");
 
 //        chooseYourEventComboBox = new JComboBox();
         chooseYourEventList = new JList();
@@ -126,10 +132,60 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         chooseYourCategoryList.setModel(sportraitEventCategoryListModel);
         chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
 
+        final JPanel spacer1 = new JPanel(); // vspacer
+        final JPanel spacer2 = new JPanel(); // hspacer
+        final JPanel spacer3 = new JPanel();
 
-        this.add(label);
-        this.add(eventListScroller);
-        this.add(categoryListScroller);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        this.add(targetLabel,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+//        gbc.fill = GridBagConstraints.VERTICAL;
+        this.add(spacer1,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+//        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.add(eventLabel,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+//        gbc.fill = GridBagConstraints.VERTICAL;
+        this.add(eventListScroller,gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+//        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.add(spacer2,gbc);
+        
+        gbc.gridx = 2;
+        gbc.gridy = 2;
+//        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.add(categoryLabel,gbc);
+
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+//        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.add(categoryListScroller,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+//        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.add(spacer3,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+//        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.add(sourceLabel,gbc);
+
     }
 
     private void loadEventList()
