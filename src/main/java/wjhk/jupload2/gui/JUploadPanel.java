@@ -21,8 +21,7 @@
 
 package wjhk.jupload2.gui;
 
-import java.awt.Container;
-import java.awt.Frame;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
@@ -222,7 +221,9 @@ public class JUploadPanel extends JPanel implements ActionListener,
     private void setupUnartigPanel()
     {
         unartigPanel = new JUnartigUploadClientPanel(this.uploadPolicy);
-
+        // debugging: set a red border:
+        unartigPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),unartigPanel.getBorder()));
+        unartigPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.add(unartigPanel);
     }
 
