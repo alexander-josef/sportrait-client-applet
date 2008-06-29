@@ -79,16 +79,23 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
      */
     private void init()
     {
-        this.setMinimumSize(new Dimension(600,200));
+        this.setMinimumSize(new Dimension(400,200));
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
         System.out.println("JUnartigUploadClientPanel.init :  got albums");
 
-        JLabel targetLabel = new JLabel("ZIEL -- Event und Kategorie für Foto-Upload wählen:");
+        JLabel targetLabel = new JLabel("ZIEL:");
+        JLabel targetLabelComment = new JLabel("(Event und Kategorie für Foto-Upload wählen)");
+//        JLabel targetLabel = new JLabel("ZIEL: -- Event und Kategorie für Foto-Upload wählen:");
+        targetLabel.setFont(new Font(targetLabel.getFont().getName(), Font.BOLD, 18));
+        debugRedBorder(targetLabel);
+        targetLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+
         JLabel eventLabel = new JLabel("Anlass");
-        JLabel categoryLabel = new JLabel("Event");
+        JLabel categoryLabel = new JLabel("Kategorie");
         JLabel sourceLabel = new JLabel("Quelle:");
+        sourceLabel.setFont(new Font(sourceLabel.getFont().getName(), Font.BOLD, 18));
 
 //        chooseYourEventComboBox = new JComboBox();
         chooseYourEventList = new JList();
@@ -133,59 +140,105 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
 
         final JPanel spacer1 = new JPanel(); // vspacer
+//        debugRedBorder(spacer1);
         final JPanel spacer2 = new JPanel(); // hspacer
+//        debugRedBorder(spacer2);
         final JPanel spacer3 = new JPanel();
+//        debugRedBorder(spacer3);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
+        gbc.gridwidth = 3;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
         this.add(targetLabel,gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
+        gbc.gridwidth = 3;
+        gbc.weightx = 0;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
+        this.add(targetLabelComment,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 3;
+        gbc.gridheight = 1;
+        gbc.weightx = 0;
 //        gbc.fill = GridBagConstraints.VERTICAL;
         this.add(spacer1,gbc);
 
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
 //        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.WEST;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
         this.add(eventLabel,gbc);
 
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-//        gbc.fill = GridBagConstraints.VERTICAL;
-        this.add(eventListScroller,gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 3;
-//        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.WEST;
-        this.add(spacer2,gbc);
-        
-        gbc.gridx = 2;
-        gbc.gridy = 2;
-//        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.WEST;
-        this.add(categoryLabel,gbc);
-
-        gbc.gridx = 2;
-        gbc.gridy = 3;
-//        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.WEST;
-        this.add(categoryListScroller,gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 4;
 //        gbc.fill = GridBagConstraints.VERTICAL;
-        gbc.anchor = GridBagConstraints.WEST;
-        this.add(spacer3,gbc);
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        this.add(eventListScroller,gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 5;
+        gbc.gridwidth = 3;
+//        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
+        this.add(spacer3,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        gbc.gridwidth = 3;
 //        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.WEST;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
         this.add(sourceLabel,gbc);
 
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+//        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridheight = 1;
+        this.add(spacer1,gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 4;
+        gbc.gridwidth = 1;
+//        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
+        this.add(spacer2,gbc);
+        
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+//        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
+        this.add(categoryLabel,gbc);
+
+        gbc.gridx = 2;
+        gbc.gridy = 4;
+        gbc.gridwidth = 1;
+//        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.gridheight = 1;
+        this.add(categoryListScroller,gbc);
+
+
+    }
+
+    private void debugRedBorder(JComponent targetLabel) {
+        targetLabel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),targetLabel.getBorder()));
     }
 
     private void loadEventList()

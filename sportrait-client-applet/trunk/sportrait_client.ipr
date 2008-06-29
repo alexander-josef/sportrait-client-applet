@@ -237,7 +237,7 @@
       <option name="MAIN_CLASS_NAME" value="wjhk.jupload2.JUploadApplet" />
       <option name="HTML_FILE_NAME" />
       <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="800" />
+      <option name="WIDTH" value="500" />
       <option name="HEIGHT" value="600" />
       <option name="POLICY_FILE" value="file://$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
