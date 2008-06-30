@@ -222,7 +222,7 @@ public class JUploadPanel extends JPanel implements ActionListener,
     {
         unartigPanel = new JUnartigUploadClientPanel(this.uploadPolicy);
         // debugging: set a red border:
-        unartigPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),unartigPanel.getBorder()));
+//        unartigPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),unartigPanel.getBorder()));
         unartigPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.add(unartigPanel);
     }

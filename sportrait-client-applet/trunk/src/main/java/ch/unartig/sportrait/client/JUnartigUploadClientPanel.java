@@ -89,7 +89,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         JLabel targetLabelComment = new JLabel("(Event und Kategorie für Foto-Upload wählen)");
 //        JLabel targetLabel = new JLabel("ZIEL: -- Event und Kategorie für Foto-Upload wählen:");
         targetLabel.setFont(new Font(targetLabel.getFont().getName(), Font.BOLD, 18));
-        debugRedBorder(targetLabel);
+//        debugRedBorder(targetLabel);
         targetLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel eventLabel = new JLabel("Anlass");
