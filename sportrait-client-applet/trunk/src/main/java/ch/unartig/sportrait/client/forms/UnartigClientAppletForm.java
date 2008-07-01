@@ -13,7 +13,8 @@ import java.awt.*;
  */
 public class UnartigClientAppletForm {
     private JPanel unartigClientPanel;
-    private JList categoryList;
+    private JList chooseYourCategoryList;
+    private JList chooseYourEventList;
 
     public void createUIComponents() {
 
@@ -43,7 +44,7 @@ public class UnartigClientAppletForm {
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridwidth = 3;
+        gbc.gridwidth = 4;
         gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(label1, gbc);
@@ -52,13 +53,13 @@ public class UnartigClientAppletForm {
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
-        gbc.gridwidth = 3;
+        gbc.gridwidth = 4;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(label2, gbc);
         final JLabel label3 = new JLabel();
         label3.setText("Anlass");
         gbc = new GridBagConstraints();
-        gbc.gridx = 0;
+        gbc.gridx = 1;
         gbc.gridy = 4;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(label3, gbc);
@@ -67,7 +68,7 @@ public class UnartigClientAppletForm {
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 6;
-        gbc.gridwidth = 3;
+        gbc.gridwidth = 4;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(panel1, gbc);
         final JLabel label4 = new JLabel();
@@ -76,38 +77,38 @@ public class UnartigClientAppletForm {
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 7;
-        gbc.gridwidth = 3;
+        gbc.gridwidth = 4;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(label4, gbc);
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         gbc = new GridBagConstraints();
-        gbc.gridx = 1;
+        gbc.gridx = 2;
         gbc.gridy = 4;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(panel2, gbc);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         gbc = new GridBagConstraints();
-        gbc.gridx = 1;
+        gbc.gridx = 2;
         gbc.gridy = 5;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(panel3, gbc);
         final JLabel label5 = new JLabel();
         label5.setText("Kategorie");
         gbc = new GridBagConstraints();
-        gbc.gridx = 2;
+        gbc.gridx = 3;
         gbc.gridy = 4;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(label5, gbc);
         final JScrollPane scrollPane1 = new JScrollPane();
         scrollPane1.setVerticalScrollBarPolicy(22);
         gbc = new GridBagConstraints();
-        gbc.gridx = 2;
+        gbc.gridx = 3;
         gbc.gridy = 5;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(scrollPane1, gbc);
-        categoryList = new JList();
+        chooseYourCategoryList = new JList();
         final DefaultListModel defaultListModel1 = new DefaultListModel();
         defaultListModel1.addElement("Category1");
         defaultListModel1.addElement("Category1");
@@ -122,17 +123,17 @@ public class UnartigClientAppletForm {
         defaultListModel1.addElement("Category1");
         defaultListModel1.addElement("Category1");
         defaultListModel1.addElement("Long Cagtegoryadsfa");
-        categoryList.setModel(defaultListModel1);
-        categoryList.setSelectionMode(0);
-        scrollPane1.setViewportView(categoryList);
+        chooseYourCategoryList.setModel(defaultListModel1);
+        chooseYourCategoryList.setSelectionMode(0);
+        scrollPane1.setViewportView(chooseYourCategoryList);
         final JScrollPane scrollPane2 = new JScrollPane();
         scrollPane2.setVerticalScrollBarPolicy(22);
         gbc = new GridBagConstraints();
-        gbc.gridx = 0;
+        gbc.gridx = 1;
         gbc.gridy = 5;
         gbc.anchor = GridBagConstraints.WEST;
         unartigClientPanel.add(scrollPane2, gbc);
-        final JList list1 = new JList();
+        chooseYourEventList = new JList();
         final DefaultListModel defaultListModel2 = new DefaultListModel();
         defaultListModel2.addElement("Category1");
         defaultListModel2.addElement("Category1");
@@ -147,16 +148,22 @@ public class UnartigClientAppletForm {
         defaultListModel2.addElement("Category1");
         defaultListModel2.addElement("Category1");
         defaultListModel2.addElement("Long Cagtegoryadsfa");
-        list1.setModel(defaultListModel2);
-        list1.setSelectionMode(0);
-        scrollPane2.setViewportView(list1);
+        chooseYourEventList.setModel(defaultListModel2);
+        chooseYourEventList.setSelectionMode(0);
+        scrollPane2.setViewportView(chooseYourEventList);
         final JPanel spacer1 = new JPanel();
         gbc = new GridBagConstraints();
-        gbc.gridx = 0;
+        gbc.gridx = 1;
         gbc.gridy = 3;
         gbc.gridwidth = 3;
         gbc.fill = GridBagConstraints.VERTICAL;
         unartigClientPanel.add(spacer1, gbc);
+        final JPanel spacer2 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        unartigClientPanel.add(spacer2, gbc);
     }
 
     /**
