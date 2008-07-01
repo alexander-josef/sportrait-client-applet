@@ -91,7 +91,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="65460" class="javax.swing.JList" binding="categoryList">
+          <component id="65460" class="javax.swing.JList" binding="chooseYourCategoryList">
             <constraints/>
             <properties>
               <model>
@@ -124,7 +124,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="3f207" class="javax.swing.JList">
+          <component id="3f207" class="javax.swing.JList" binding="chooseYourEventList">
             <constraints/>
             <properties>
               <model>
