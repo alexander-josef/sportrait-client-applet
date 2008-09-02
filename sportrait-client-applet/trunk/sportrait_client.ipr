@@ -248,10 +248,16 @@
       <parameter name="nbFilesPerRequest" value="1" />
       <parameter name="photographerId" value="1" />
       <parameter name="photographerPass" value="1234" />
-      <parameter name="postURL" value="http://localhost:8080/jupload/upload.html" />
+      <parameter name="postURL" value="http://localhost:8080/sportrait/jupload/upload.html" />
       <parameter name="uploadPolicy" value="ch.unartig.sportrait.client.jUploadPolicies.UnartigSportraitUploadPolicy" />
-      <parameter name="xmlRpcServerUrl" value="http://localhost:8080/xmlrpc" />
+      <parameter name="xmlRpcServerUrl" value="http://localhost:8080/sportrait/xmlrpc" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56325" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
@@ -290,10 +296,18 @@
         </entry>
       </map>
     </option>
+    <option name="myVersion" value="123" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="uidesigner-configuration">
+    <option name="INSTRUMENT_CLASSES" value="false" />
+    <option name="DEFAULT_LAYOUT_MANAGER" value="GridBagLayout" />
+  </component>
+  <UsedPathMacros>
+    <macro name="MAVEN_REPOSITORY" />
+  </UsedPathMacros>
 </project>
 

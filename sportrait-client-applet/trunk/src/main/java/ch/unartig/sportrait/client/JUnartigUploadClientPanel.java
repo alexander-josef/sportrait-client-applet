@@ -39,13 +39,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import ch.unartig.sportrait.client.jUploadPolicies.UnartigSportraitUploadPolicy;
+import ch.unartig.sportrait.client.forms.UnartigClientAppletForm;
 
-public class JUnartigUploadClientPanel extends JPanel implements ActionListener
+public class JUnartigUploadClientPanel  implements ActionListener
 {
     private UploadPolicy uploadPolicy;
 //    private JComboBox chooseYourEventComboBox;
-    private JList chooseYourEventList;
-    private JList chooseYourCategoryList;
+//    private JList chooseYourEventList;
+//    private JList chooseYourCategoryList;
     private static final String _PHOTOGRAPHER_PASS = "photographerPass";
     private static final String _PHOTOGRAPHER_ID = "photographerId";
     private static final String _XML_RPC_SERVER_URL = "xmlRpcServerUrl";
@@ -53,14 +54,66 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
     private HashMap eventMap;
     private DefaultListModel sportraitEventListModel;
     private DefaultListModel sportraitEventCategoryListModel;
+    private UnartigClientAppletForm form;
 
+/*    public JUnartigUploadClientPanel(UploadPolicy uploadPolicy)
+{
+    this.uploadPolicy = uploadPolicy;
+    init();
 
+    sportraitEventListModel = new DefaultListModel();
 
-    public JUnartigUploadClientPanel(UploadPolicy uploadPolicy)
+    sportraitEventCategoryListModel = new DefaultListModel();
+    chooseYourEventList.setModel(sportraitEventListModel);
+    chooseYourEventList.setCellRenderer(new EventRenderer());
+
+    chooseYourCategoryList.setModel(sportraitEventCategoryListModel);
+    chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
+
+    try
+    {
+        this.loadEventList();
+    } catch (Exception e)
+    {
+        throw new RuntimeException("Can not initialize events");
+    }
+}
+
+*/
+
+    public JPanel getUnartigUploadClientPanel(UploadPolicy uploadPolicy)
     {
         this.uploadPolicy = uploadPolicy;
-        init();
+        form = new UnartigClientAppletForm();
 
+
+        sportraitEventListModel = new DefaultListModel();
+
+        // debug
+//        sportraitEventListModel.addElement("one");
+//        sportraitEventListModel.addElement("two");
+//        sportraitEventListModel.addElement("three");
+//
+        sportraitEventCategoryListModel = new DefaultListModel();
+        form.chooseYourEventList.setModel(sportraitEventListModel);
+        form.chooseYourEventList.setCellRenderer(new EventRenderer());
+
+        form.chooseYourCategoryList.setModel(sportraitEventCategoryListModel);
+        form.chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
+
+        // todo listeners!!
+        form.chooseYourCategoryList.addListSelectionListener(new EventCategotyListSelectionListener());
+        form.chooseYourEventList.addListSelectionListener(new EventListSelectionListener());
+
+        try
+        {
+            this.loadEventList();
+        } catch (Exception e)
+        {
+            throw new RuntimeException("Can not initialize events");
+        }
+
+        return form.eventCategoryChooserPanel;
     }
 
 
@@ -77,6 +130,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
      *
      * on change in the event list, adapt the category list
      */
+/*
     private void init()
     {
         this.setMinimumSize(new Dimension(400,200));
@@ -115,29 +169,6 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         categoryListScroller.setPreferredSize(new Dimension(200, 100));
         categoryListScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        sportraitEventListModel = new DefaultListModel();
-
-        sportraitEventCategoryListModel = new DefaultListModel();
-        try
-        {
-            loadEventList();
-        } catch (Exception e)
-        {
-            throw new RuntimeException("Can not initialize events");
-        }
-        // insert categories in list
-        // todo doesn't need to be initialized
-//        for (Object category : categories)
-//        {
-//            String categoryKey = (String) category;
-//            sportraitEventCategoryListModel.addElement("Bitte Anlass waehlen");
-//        }
-
-        chooseYourEventList.setModel(sportraitEventListModel);
-        chooseYourEventList.setCellRenderer(new EventRenderer());
-
-        chooseYourCategoryList.setModel(sportraitEventCategoryListModel);
-        chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
 
         final JPanel spacer1 = new JPanel(); // vspacer
 //        debugRedBorder(spacer1);
@@ -217,7 +248,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         gbc.anchor = GridBagConstraints.LINE_START;
         gbc.gridheight = 1;
         this.add(spacer2,gbc);
-        
+
         gbc.gridx = 2;
         gbc.gridy = 3;
         gbc.gridwidth = 1;
@@ -236,12 +267,13 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
 
 
     }
+*/
 
     private void debugRedBorder(JComponent targetLabel) {
         targetLabel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),targetLabel.getBorder()));
     }
 
-    private void loadEventList()
+    public void loadEventList()
     {
         // insert events in list
         Object [] events;
@@ -386,7 +418,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         try
         {
             // todo adjust to event Id and category Id
-            uploadPolicy.setProperty(UploadPolicy.PROP_ALBUM_ID,(String)chooseYourEventList.getSelectedValue());
+            uploadPolicy.setProperty(UploadPolicy.PROP_ALBUM_ID,(String)form.chooseYourEventList.getSelectedValue());
         } catch (JUploadException e1)
         {
             e1.printStackTrace();
@@ -399,7 +431,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         public void valueChanged(ListSelectionEvent e)
         {
             System.out.println("JUnartigUploadClientPanel$EventListSelectionListener.valueChanged");
-            String eventId = (String)chooseYourEventList.getSelectedValue();
+            String eventId = (String)form.chooseYourEventList.getSelectedValue();
             System.out.println("event id = " + eventId);
             try
             {
@@ -420,7 +452,7 @@ public class JUnartigUploadClientPanel extends JPanel implements ActionListener
         {
             try
             {
-                uploadPolicy.setProperty(UnartigSportraitUploadPolicy.PROP_EVENT_CATEGORY_ID,(String)chooseYourCategoryList.getSelectedValue());
+                uploadPolicy.setProperty(UnartigSportraitUploadPolicy.PROP_EVENT_CATEGORY_ID,(String)form.chooseYourCategoryList.getSelectedValue());
             } catch (JUploadException e1)
             {
                 throw new RuntimeException("Problem choosing the event category");

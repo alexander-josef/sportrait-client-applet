@@ -15,104 +15,104 @@
     <orderEntry type="module-library" exported="">
       <library name="xmlrpc:xmlrpc-client:3.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/xmlrpc/xmlrpc-client/3.0/xmlrpc-client-3.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xmlrpc/xmlrpc-client/3.0/xmlrpc-client-3.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/xmlrpc/xmlrpc-client/3.0/xmlrpc-client-3.0-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xmlrpc/xmlrpc-client/3.0/xmlrpc-client-3.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/xmlrpc/xmlrpc-client/3.0/xmlrpc-client-3.0-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xmlrpc/xmlrpc-client/3.0/xmlrpc-client-3.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.xmlrpc:xmlrpc-common:3.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/org/apache/xmlrpc/xmlrpc-common/3.0/xmlrpc-common-3.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlrpc/xmlrpc-common/3.0/xmlrpc-common-3.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/org/apache/xmlrpc/xmlrpc-common/3.0/xmlrpc-common-3.0-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlrpc/xmlrpc-common/3.0/xmlrpc-common-3.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/org/apache/xmlrpc/xmlrpc-common/3.0/xmlrpc-common-3.0-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlrpc/xmlrpc-common/3.0/xmlrpc-common-3.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.apache.ws.commons:ws-commons-util:1.0.1">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/org/apache/ws/commons/ws-commons-util/1.0.1/ws-commons-util-1.0.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/ws/commons/ws-commons-util/1.0.1/ws-commons-util-1.0.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/org/apache/ws/commons/ws-commons-util/1.0.1/ws-commons-util-1.0.1-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/ws/commons/ws-commons-util/1.0.1/ws-commons-util-1.0.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/org/apache/ws/commons/ws-commons-util/1.0.1/ws-commons-util-1.0.1-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/ws/commons/ws-commons-util/1.0.1/ws-commons-util-1.0.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="junit:junit:3.8.1">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/junit/junit/3.8.1/junit-3.8.1-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/junit/junit/3.8.1/junit-3.8.1-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="xml-apis:xml-apis:1.0.b2">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="sun-plugin:sun-plugin:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/sun-plugin/sun-plugin/1.0/sun-plugin-1.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/sun-plugin/sun-plugin/1.0/sun-plugin-1.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/sun-plugin/sun-plugin/1.0/sun-plugin-1.0-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/sun-plugin/sun-plugin/1.0/sun-plugin-1.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/sun-plugin/sun-plugin/1.0/sun-plugin-1.0-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/sun-plugin/sun-plugin/1.0/sun-plugin-1.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="commons-net:commons-net:1.4.1">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/1.4.1/commons-net-1.4.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/1.4.1/commons-net-1.4.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="oro:oro:2.0.8">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/oro/oro/2.0.8/oro-2.0.8-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../.m2/repository/oro/oro/2.0.8/oro-2.0.8-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

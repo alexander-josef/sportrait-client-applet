@@ -41,6 +41,7 @@ import wjhk.jupload2.upload.FileUploadThread;
 import wjhk.jupload2.upload.FileUploadThreadFTP;
 import wjhk.jupload2.upload.FileUploadThreadHTTP;
 import ch.unartig.sportrait.client.JUnartigUploadClientPanel;
+import ch.unartig.sportrait.client.forms.UnartigClientAppletForm;
 
 /**
  * Overwriting the default Append class such that it scrolls to the bottom of
@@ -159,7 +160,6 @@ public class JUploadPanel extends JPanel implements ActionListener,
     private UploadPolicy uploadPolicy = null;
 
     protected FileUploadThread fileUploadThread = null;
-    private JPanel unartigPanel;
 
     // ------------- CONSTRUCTOR --------------------------------------------
 
@@ -220,11 +220,19 @@ public class JUploadPanel extends JPanel implements ActionListener,
 
     private void setupUnartigPanel()
     {
-        unartigPanel = new JUnartigUploadClientPanel(this.uploadPolicy);
+        JUnartigUploadClientPanel unartigForm = new JUnartigUploadClientPanel();
+//        unartigPanel = new JUnartigUploadClientPanel(this.uploadPolicy);
+
         // debugging: set a red border:
 //        unartigPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),unartigPanel.getBorder()));
-        unartigPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+//        unartigPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JPanel unartigPanel = unartigForm.getUnartigUploadClientPanel(this.uploadPolicy);
+        unartigPanel.setMinimumSize(new Dimension(450,220));
         this.add(unartigPanel);
+//        JPanel jPanel = new UnartigClientAppletForm().eventCategoryChooserPanel;
+//        jPanel.setMinimumSize(new Dimension(450,200));
+//        this.add(jPanel);
     }
 
     // ----------------------------------------------------------------------
