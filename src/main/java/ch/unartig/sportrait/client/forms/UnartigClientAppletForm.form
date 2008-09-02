@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ch.unartig.sportrait.client.forms.UnartigClientAppletForm">
-  <grid id="5ccaf" class="ch.unartig.sportrait.client.JUnartigUploadClientPanel" binding="unartigClientPanel" custom-create="true" layout-manager="GridBagLayout">
+  <grid id="27dc6" binding="eventCategoryChooserPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="5" y="2" width="596" height="362"/>
+      <xy x="20" y="146" width="506" height="289"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="16c28" class="javax.swing.JLabel">
+      <component id="71210" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="1.0" weighty="0.0"/>
@@ -17,16 +17,16 @@
           <text value="ZIEL:"/>
         </properties>
       </component>
-      <component id="5f7b8" class="javax.swing.JLabel">
+      <component id="cf88b" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="(Event und Kategorie für Foto-Upload wählen)"/>
+          <text value="(Event und Kategorie für Foto-Upload bestimmen)"/>
         </properties>
       </component>
-      <component id="34168" class="javax.swing.JLabel">
+      <component id="672d4" class="javax.swing.JLabel">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -35,44 +35,83 @@
           <text value="Anlass"/>
         </properties>
       </component>
-      <grid id="d117d" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <component id="3210" class="javax.swing.JLabel">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </grid>
-      <component id="2a734" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="7" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
           <font size="18" style="1"/>
-          <text value="Quelle:"/>
+          <text value="QUELLE:"/>
         </properties>
       </component>
-      <grid id="e3a82" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <scrollpane id="2f207">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <preferredSize width="200" height="100"/>
+          <verticalScrollBarPolicy value="22"/>
+        </properties>
         <border type="none"/>
-        <children/>
-      </grid>
-      <grid id="2de5d" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <children>
+          <component id="4b4c8" class="javax.swing.JList" binding="chooseYourCategoryList">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="category1"/>
+                <item value="asdf"/>
+                <item value="asd"/>
+                <item value="fasd"/>
+                <item value="fasdfasdfas"/>
+                <item value="df"/>
+                <item value="afsd"/>
+                <item value="f"/>
+              </model>
+              <preferredSize width="200" height="100"/>
+              <requestFocusEnabled value="false"/>
+              <selectionMode value="0"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <scrollpane id="71015">
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <preferredSize width="200" height="100"/>
+          <requestFocusEnabled value="false"/>
+          <verticalScrollBarPolicy value="22"/>
+        </properties>
         <border type="none"/>
-        <children/>
-      </grid>
-      <component id="d7519" class="javax.swing.JLabel">
+        <children>
+          <component id="dc596" class="javax.swing.JList" binding="chooseYourEventList">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="event1"/>
+                <item value="asdf"/>
+                <item value="asdf"/>
+                <item value="asdf"/>
+                <item value="asd"/>
+                <item value="f"/>
+              </model>
+              <preferredSize width="200" height="100"/>
+              <selectionMode value="0"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <hspacer id="154ac">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <component id="bfddb" class="javax.swing.JLabel">
         <constraints>
           <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -81,84 +120,34 @@
           <text value="Kategorie"/>
         </properties>
       </component>
-      <scrollpane id="5767a">
+      <vspacer id="50065">
         <constraints>
-          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties>
-          <verticalScrollBarPolicy value="22"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="65460" class="javax.swing.JList" binding="chooseYourCategoryList">
-            <constraints/>
-            <properties>
-              <model>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Long Cagtegoryadsfa"/>
-              </model>
-              <selectionMode value="0"/>
-            </properties>
-          </component>
-        </children>
-      </scrollpane>
-      <scrollpane id="a528">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties>
-          <verticalScrollBarPolicy value="22"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="3f207" class="javax.swing.JList" binding="chooseYourEventList">
-            <constraints/>
-            <properties>
-              <model>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Category1"/>
-                <item value="Long Cagtegoryadsfa"/>
-              </model>
-              <selectionMode value="0"/>
-            </properties>
-          </component>
-        </children>
-      </scrollpane>
-      <vspacer id="63299">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </vspacer>
-      <hspacer id="c80d8">
+      <hspacer id="aa355">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </hspacer>
+      <component id="b6472" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="(Fotos auswählen)"/>
+        </properties>
+      </component>
+      <component id="4d6d7" class="javax.swing.JSeparator">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+      </component>
     </children>
   </grid>
 </form>
