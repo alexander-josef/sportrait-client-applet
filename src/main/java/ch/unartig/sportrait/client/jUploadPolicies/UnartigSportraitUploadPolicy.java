@@ -22,13 +22,19 @@ package ch.unartig.sportrait.client.jUploadPolicies;
 import wjhk.jupload2.policies.PictureUploadPolicy;
 import wjhk.jupload2.policies.UploadPolicyFactory;
 import wjhk.jupload2.JUploadApplet;
+import wjhk.jupload2.gui.JUploadPanel;
 import wjhk.jupload2.filedata.FileData;
 import wjhk.jupload2.filedata.PictureFileData;
 import wjhk.jupload2.filedata.DefaultFileData;
 import wjhk.jupload2.exception.JUploadException;
+import wjhk.jupload2.exception.JUploadIOException;
 
+import javax.swing.*;
 import java.io.File;
 import java.net.URL;
+import java.awt.*;
+
+import ch.unartig.sportrait.client.JUnartigUploadClientPanel;
 
 // TODO cookies handling: desc to be mve to UploadPolicy presentation.
 /**
@@ -107,7 +113,8 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
      * Constructor
      * @param theApplet Identifier for the current applet. It's necessary, to
      *            read information from the navigator.
-     * @throws wjhk.jupload2.exception.JUploadException todo add description
+     * @throws wjhk.jupload2.exception.JUploadException
+     * todo add description
      */
     public UnartigSportraitUploadPolicy(JUploadApplet theApplet) throws JUploadException
     {
@@ -125,6 +132,34 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
         this.photographerPassword = UploadPolicyFactory.getParameter(theApplet,PROP_PHOTOGRAPHER_PASSWORD, DEFAULT_PHOTOGRAPHER_PASSWORD, this);
     }
 
+
+
+    /**
+     * Calls the parent pictureUploadPolicy for the standard top panel and adds the unartig panel
+     * @param browse The browse button
+     * @param remove the Remove button
+     * @param removeAll the Remove All button
+     * @param mainPanel the Main upload panel
+     * @return the combined panel including the unartig interface
+     */
+    @Override
+    public JPanel createTopPanel(JButton browse, JButton remove, JButton removeAll, JUploadPanel mainPanel) {
+
+        JPanel combinedPanel = new JPanel(new GridLayout(2,1)); // a container for the top panel and the unartig panel
+        // use super to create the standard panel
+        JPanel topPanel = super.createTopPanel(browse, remove, removeAll, mainPanel);
+
+        // the unartig panel:
+        JUnartigUploadClientPanel unartigForm = new JUnartigUploadClientPanel();
+        JPanel unartigPanel = unartigForm.getUnartigUploadClientPanel(this);
+        unartigPanel.setMinimumSize(new Dimension(450,220));
+
+        combinedPanel.add(unartigPanel);
+        combinedPanel.add(topPanel);
+
+        return combinedPanel;
+    }
+
     /**
      * The Coppermine gallery allows files other than pictures. If it's a
      * picture, we manage it as a picture. Otherwise, we currently do nothing.
@@ -133,7 +168,12 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
      */
     @Override
     public FileData createFileData(File file, File root) {
-        PictureFileData pfd = new PictureFileData(file, root, this);
+        PictureFileData pfd;
+        try {
+            pfd = new PictureFileData(file, root, this);
+        } catch (JUploadIOException e) { // todo why is this exception thrown?
+            throw new RuntimeException(e);
+        }
         if (pfd.isPicture()) {
             return pfd;
         }
@@ -229,7 +269,7 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
         }
 
         // We note the number of files to upload.
-        this.nbPictureInUpload = getApplet().getFilePanel().getFilesLength();
+        this.nbPictureInUpload = getApplet().getUploadPanel().getFilePanel().getFilesLength();
 
         // Default : Let's ask the mother.
         return super.isUploadReady();
@@ -243,7 +283,7 @@ public class UnartigSportraitUploadPolicy extends PictureUploadPolicy
     String serverOutput) {
         if (e == null) {
             try {
-                // First : construction of the editpic URL :
+                // First : constr uction of the editpic URL :
                 String editpicURL = getPostURL().substring(0,
                         getPostURL().lastIndexOf('/'))
                         // + "/editpics.php?album=" + albumId
