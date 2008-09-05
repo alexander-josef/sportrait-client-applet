@@ -27,6 +27,14 @@
             <version>1.4.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>wjhk</groupId>
+            <artifactId>jupload</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+
+
     </dependencies>
 
 
@@ -130,7 +138,6 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <!--todo : have the svn url with the username somewhere else ... this is not portable.-->
     <scm>
         <connection>scm:svn:svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk</connection>
         <!--<developerConnection>scm:svn:svn+ssh://alex@svn.unartig.ch/opt/svn/repos/sportrait-client-applet/tags/sportrait_client-0.6.0</developerConnection>-->

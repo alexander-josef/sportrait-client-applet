@@ -44,9 +44,6 @@ import ch.unartig.sportrait.client.forms.UnartigClientAppletForm;
 public class JUnartigUploadClientPanel  implements ActionListener
 {
     private UploadPolicy uploadPolicy;
-//    private JComboBox chooseYourEventComboBox;
-//    private JList chooseYourEventList;
-//    private JList chooseYourCategoryList;
     private static final String _PHOTOGRAPHER_PASS = "photographerPass";
     private static final String _PHOTOGRAPHER_ID = "photographerId";
     private static final String _XML_RPC_SERVER_URL = "xmlRpcServerUrl";
@@ -56,30 +53,7 @@ public class JUnartigUploadClientPanel  implements ActionListener
     private DefaultListModel sportraitEventCategoryListModel;
     private UnartigClientAppletForm form;
 
-/*    public JUnartigUploadClientPanel(UploadPolicy uploadPolicy)
-{
-    this.uploadPolicy = uploadPolicy;
-    init();
 
-    sportraitEventListModel = new DefaultListModel();
-
-    sportraitEventCategoryListModel = new DefaultListModel();
-    chooseYourEventList.setModel(sportraitEventListModel);
-    chooseYourEventList.setCellRenderer(new EventRenderer());
-
-    chooseYourCategoryList.setModel(sportraitEventCategoryListModel);
-    chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
-
-    try
-    {
-        this.loadEventList();
-    } catch (Exception e)
-    {
-        throw new RuntimeException("Can not initialize events");
-    }
-}
-
-*/
 
     public JPanel getUnartigUploadClientPanel(UploadPolicy uploadPolicy)
     {
@@ -89,11 +63,6 @@ public class JUnartigUploadClientPanel  implements ActionListener
 
         sportraitEventListModel = new DefaultListModel();
 
-        // debug
-//        sportraitEventListModel.addElement("one");
-//        sportraitEventListModel.addElement("two");
-//        sportraitEventListModel.addElement("three");
-//
         sportraitEventCategoryListModel = new DefaultListModel();
         form.chooseYourEventList.setModel(sportraitEventListModel);
         form.chooseYourEventList.setCellRenderer(new EventRenderer());
@@ -101,7 +70,6 @@ public class JUnartigUploadClientPanel  implements ActionListener
         form.chooseYourCategoryList.setModel(sportraitEventCategoryListModel);
         form.chooseYourCategoryList.setCellRenderer(new EventCategoryRenderer());
 
-        // todo listeners!!
         form.chooseYourCategoryList.addListSelectionListener(new EventCategotyListSelectionListener());
         form.chooseYourEventList.addListSelectionListener(new EventListSelectionListener());
 
@@ -117,157 +85,7 @@ public class JUnartigUploadClientPanel  implements ActionListener
     }
 
 
-    /**
-     * Retrieve the albums via XmlRpc
-     * Set label and Render received albums as combobox
-     *
-     * new:
-     * retrieve the events via xmlrpc
-     * retrieve the categories via xmlrpc
-     * create empty event list
-     * create empty event-category list
-     *
-     *
-     * on change in the event list, adapt the category list
-     */
-/*
-    private void init()
-    {
-        this.setMinimumSize(new Dimension(400,200));
-        this.setLayout(new GridBagLayout());
-        GridBagConstraints gbc;
-        gbc = new GridBagConstraints();
-        System.out.println("JUnartigUploadClientPanel.init :  got albums");
 
-        JLabel targetLabel = new JLabel("ZIEL:");
-        JLabel targetLabelComment = new JLabel("(Event und Kategorie für Foto-Upload wählen)");
-//        JLabel targetLabel = new JLabel("ZIEL: -- Event und Kategorie für Foto-Upload wählen:");
-        targetLabel.setFont(new Font(targetLabel.getFont().getName(), Font.BOLD, 18));
-//        debugRedBorder(targetLabel);
-        targetLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        JLabel eventLabel = new JLabel("Anlass");
-        JLabel categoryLabel = new JLabel("Kategorie");
-        JLabel sourceLabel = new JLabel("Quelle:");
-        sourceLabel.setFont(new Font(sourceLabel.getFont().getName(), Font.BOLD, 18));
-
-//        chooseYourEventComboBox = new JComboBox();
-        chooseYourEventList = new JList();
-        chooseYourEventList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        chooseYourEventList.setLayoutOrientation(JList.VERTICAL);
-        chooseYourEventList.setVisibleRowCount(-1);
-        chooseYourEventList.addListSelectionListener(new EventListSelectionListener());
-        JScrollPane eventListScroller = new JScrollPane(chooseYourEventList);
-        eventListScroller.setPreferredSize(new Dimension(200,100));
-        eventListScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        chooseYourCategoryList = new JList();
-        chooseYourCategoryList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        chooseYourCategoryList.setLayoutOrientation(JList.VERTICAL);
-        chooseYourCategoryList.addListSelectionListener(new EventCategotyListSelectionListener());
-        JScrollPane categoryListScroller = new JScrollPane(chooseYourCategoryList);
-        categoryListScroller.setPreferredSize(new Dimension(200, 100));
-        categoryListScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-
-        final JPanel spacer1 = new JPanel(); // vspacer
-//        debugRedBorder(spacer1);
-        final JPanel spacer2 = new JPanel(); // hspacer
-//        debugRedBorder(spacer2);
-        final JPanel spacer3 = new JPanel();
-//        debugRedBorder(spacer3);
-
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 3;
-        gbc.weightx = 1.0;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(targetLabel,gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.gridwidth = 3;
-        gbc.weightx = 0;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(targetLabelComment,gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        gbc.gridwidth = 3;
-        gbc.gridheight = 1;
-        gbc.weightx = 0;
-//        gbc.fill = GridBagConstraints.VERTICAL;
-        this.add(spacer1,gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        gbc.gridwidth = 1;
-//        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(eventLabel,gbc);
-
-
-        gbc.gridx = 0;
-        gbc.gridy = 4;
-//        gbc.fill = GridBagConstraints.VERTICAL;
-        gbc.gridheight = 1;
-        gbc.gridwidth = 1;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        this.add(eventListScroller,gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 5;
-        gbc.gridwidth = 3;
-//        gbc.fill = GridBagConstraints.VERTICAL;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(spacer3,gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 6;
-        gbc.gridwidth = 3;
-//        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(sourceLabel,gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 3;
-        gbc.gridwidth = 1;
-//        gbc.fill = GridBagConstraints.VERTICAL;
-        gbc.gridheight = 1;
-        this.add(spacer1,gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 4;
-        gbc.gridwidth = 1;
-//        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(spacer2,gbc);
-
-        gbc.gridx = 2;
-        gbc.gridy = 3;
-        gbc.gridwidth = 1;
-//        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(categoryLabel,gbc);
-
-        gbc.gridx = 2;
-        gbc.gridy = 4;
-        gbc.gridwidth = 1;
-//        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.LINE_START;
-        gbc.gridheight = 1;
-        this.add(categoryListScroller,gbc);
-
-
-    }
-*/
 
     private void debugRedBorder(JComponent targetLabel) {
         targetLabel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.RED),targetLabel.getBorder()));
