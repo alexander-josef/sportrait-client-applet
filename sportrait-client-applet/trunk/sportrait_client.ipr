@@ -39,6 +39,11 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
+  <component name="DynamicManagerImpl">
+    <option name="containingClasses">
+      <map />
+    </option>
+  </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
     <option name="GENERATE_NO_WARNINGS" value="true" />
@@ -239,18 +244,18 @@
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="sportrait upload client" type="Applet" factoryName="Applet">
+    <configuration default="false" name="sportrait upload applet" type="Applet" factoryName="Applet">
       <module name="sportrait_client" />
       <option name="MAIN_CLASS_NAME" value="wjhk.jupload2.JUploadApplet" />
       <option name="HTML_FILE_NAME" />
       <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="500" />
-      <option name="HEIGHT" value="600" />
+      <option name="WIDTH" value="600" />
+      <option name="HEIGHT" value="800" />
       <option name="POLICY_FILE" value="file://$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <parameter name="debugLevel" value="99" />
+      <parameter name="debugLevel" value="0" />
       <parameter name="maxChunkSize" value="500000" />
       <parameter name="nbFilesPerRequest" value="1" />
       <parameter name="photographerId" value="1" />
@@ -258,16 +263,11 @@
       <parameter name="postURL" value="http://localhost:8080/sportrait/jupload/upload.html" />
       <parameter name="uploadPolicy" value="ch.unartig.sportrait.client.jUploadPolicies.UnartigSportraitUploadPolicy" />
       <parameter name="xmlRpcServerUrl" value="http://localhost:8080/sportrait/xmlrpc" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56325" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
-        <option name="Make" value="true" />
+        <option name="Run Maven goal" value="true" />
+        <option name="Make" value="false" />
       </method>
     </configuration>
   </component>
@@ -286,32 +286,16 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="SvnBranchConfigurationManager">
-    <option name="myConfigurationMap">
-      <map>
-        <entry key="$PROJECT_DIR$">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/branches" />
-                  <option value="svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="svn+ssh://svn.unartig.ch/opt/svn/repos/sportrait-client-applet/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="myVersion" value="123" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
-  <component name="uidesigner-configuration">
-    <option name="INSTRUMENT_CLASSES" value="false" />
-    <option name="DEFAULT_LAYOUT_MANAGER" value="GridBagLayout" />
+  <component name="testng.defaultConfiguration">
+    <outputDirectory />
+    <properties />
+    <groups />
   </component>
   <UsedPathMacros>
     <macro name="MAVEN_REPOSITORY" />
