@@ -128,7 +128,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$MAVEN_REPOSITORY$/wjhk/jupload/3.4.1/jupload-3.4.1-sources.jar!/" />
-          <root url="file://$MODULE_DIR$/../../Downloads/jupload-V3.4.1f-src copy/src" />
         </SOURCES>
       </library>
     </orderEntry>
