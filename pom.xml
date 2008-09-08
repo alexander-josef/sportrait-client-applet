@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ch.unartig.server</groupId>
     <artifactId>sportrait_client</artifactId>
@@ -6,7 +7,11 @@
     <version>1.0-SNAPSHOT</version>
     <name>sportrait Client Applet</name>
     <url>http://sportrait.com</url>
-
+    <parent>
+        <groupId>ch.unartig</groupId>
+        <artifactId>sportrait-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <dependencies>
         <!--apache xmlrpc-->
         <dependency>
@@ -32,7 +37,6 @@
             <artifactId>jupload</artifactId>
             <version>3.4.1</version>
         </dependency>
-
 
 
     </dependencies>
